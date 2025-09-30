@@ -1,0 +1,150 @@
+.neuroChange {
+  padding: 4rem 0;
+  background: #f1f5f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #4b5563;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+}
+
+.content {
+  display: grid;
+  gap: 4rem;
+}
+
+.overview {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.overview h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+.overview p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.initiatives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.initiative {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.initiative:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.initiativeHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.initiative h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.initiative p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.research {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.research h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.researchAreas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.researchArea {
+  padding: 1.5rem;
+  border-left: 4px solid #f59e0b;
+  background: #fefce8;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.researchArea h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+.researchArea p {
+  color: #78716c;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .initiatives {
+    grid-template-columns: 1fr;
+  }
+  
+  .researchAreas {
+    grid-template-columns: 1fr;
+  }
+}
