@@ -1,0 +1,197 @@
+@import url('https://fonts.bunny.net/css?family=kodchasan:200,400,600');
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0f172a, #1e3a8a, #0f172a);
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+.blur1,
+.blur2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.2;
+  animation: pulse 5s infinite ease-in-out;
+}
+
+.blur1 {
+  top: 5rem;
+  left: 2rem;
+  width: 18rem;
+  height: 18rem;
+  background: #3b82f6;
+}
+
+.blur2 {
+  bottom: 5rem;
+  right: 2rem;
+  width: 24rem;
+  height: 24rem;
+  background: #6366f1;
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.titleWrapper {
+  text-align: center;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.cardsWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 40px;
+  border-top-right-radius: 140px;
+  transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 0px);
+  background-size: 5px 5px;
+  background-repeat: repeat;
+  border-radius: 60px;
+  border-top-right-radius: 160px;
+  z-index: -1;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  border-radius: 40px;
+  border-top-right-radius: 140px;
+  z-index: -1;
+}
+
+.cardHeader {
+  padding: 1.5rem 2rem;
+  background-color: var(--header-bg);
+  border-radius: 40px 40px 0 0;
+  border-top-right-radius: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 300ms;
+}
+
+.cardHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.cardHeader label {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+}
+
+.cardHeader label:hover {
+  transform: rotate(90deg);
+}
+
+.cardContent {
+  padding: 2.5rem;
+}
+
+.itemsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.itemsList li {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  margin-top: 0.25rem;
+}
+
+.iconCircle {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 300ms;
+}
+
+.itemsList li:hover .iconCircle {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  color: white;
+}
+
+.decorativeCorner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 0 140px 0 0;
+  opacity: 0.3;
+  pointer-events: none;
+}

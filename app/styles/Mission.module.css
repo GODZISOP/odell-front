@@ -1,105 +1,241 @@
 .mission {
-  padding: 8rem 0 4rem;
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-  color: white;
+  background-image: url('/back.avif');
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  padding: 8rem 0 6rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 1;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .subtitle {
-  font-size: 1.3rem;
-  opacity: 0.9;
-  max-width: 800px;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 850px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .content {
-  margin-top: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.missionStatement {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 3rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
-.missionGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.mainText {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-.missionCard {
-  background: rgba(255, 255, 255, 0.1);
+.visionSection,
+.approachSection,
+.impactSection {
+  margin-bottom: 3.5rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
-  padding: 2rem;
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 1rem;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
-.missionCard:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+.visionSection:hover,
+.approachSection:hover,
+.impactSection:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(8px);
 }
 
-.iconWrapper {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.subsectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-left: 1.5rem;
 }
 
-.missionCard h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.subsectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);
+  border-radius: 2px;
 }
 
-.missionCard p {
-  line-height: 1.6;
-  opacity: 0.9;
+.bodyText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .mission {
+    background-attachment: scroll;
+  }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
 }
 
 @media (max-width: 768px) {
   .mission {
-    padding: 6rem 0 2rem;
+    padding: 6rem 0 4rem;
   }
-  
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .hero {
+    margin-bottom: 3.5rem;
+  }
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
+    font-size: 1.15rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .mainText {
     font-size: 1.1rem;
   }
-  
+
+  .visionSection,
+  .approachSection,
+  .impactSection {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .visionSection:hover,
+  .approachSection:hover,
+  .impactSection:hover {
+    transform: translateX(4px);
+  }
+
+  .subsectionTitle {
+    font-size: 1.5rem;
+    padding-left: 1.25rem;
+  }
+
+  .bodyText {
+    font-size: 1rem;
+  }
+
+  .missionStatement {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission {
+    padding: 5rem 0 3rem;
+  }
+
   .container {
     padding: 0 1rem;
   }
-  
-  .missionGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .visionSection,
+  .approachSection,
+  .impactSection {
+    padding: 1.5rem 1.25rem;
   }
 }
