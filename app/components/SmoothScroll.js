@@ -1,5 +1,5 @@
 'use client'
-
+import AOS from 'aos'
 import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 
