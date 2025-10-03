@@ -110,7 +110,7 @@ export default function Mission() {
               Through collaboration with educators, institutions, and communities worldwide, we're creating 
               sustainable change that ripples across generations. Our work extends beyond traditional classrooms, 
               reaching underserved populations and empowering educators with the tools and knowledge needed to 
-              inspire the next generation of innovators, leaders, and change-makers
+              inspire the next generation of innovators, leaders, and change-makers.
             </p>
           </div>
         </div>
