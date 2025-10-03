@@ -1,7 +1,9 @@
 import styles from '../styles/EducatorTrainer.module.css'
+import Footer from './Footer'
 
 export default function EducatorTrainer() {
   return (
+    <>
     <section className={styles.educatorTrainer}>
       <div className={styles.container}>
         <h2 className={styles.title}>Educator Trainer</h2>
@@ -115,6 +117,8 @@ export default function EducatorTrainer() {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
+    </>
   )
 }
