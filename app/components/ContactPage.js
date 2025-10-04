@@ -119,7 +119,7 @@ export default function ContactPage() {
             <dotlottie-wc
               src="https://lottie.host/d7de2f8e-32ce-455a-8bcb-3016875d976a/O9QFyDMAKM.lottie"
               className={styles.lottieAnimation}
-              style={{ width: '100vw', height: '95vh' }}
+              style={{ width: '150vw', height: '155vh' }}
               autoplay
               loop
             ></dotlottie-wc>
