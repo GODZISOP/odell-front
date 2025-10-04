@@ -1,10 +1,24 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronRight } from 'lucide-react'
 import styles from '../styles/CoursesSection.module.css'
 
 export default function CoursesSection() {
   const [activeCard, setActiveCard] = useState(0)
+
+  useEffect(() => {
+    const initAOS = async () => {
+      const AOS = (await import('aos')).default
+      await import('aos/dist/aos.css')
+      AOS.init({
+        duration: 600,
+        once: false,
+        easing: 'ease-out-cubic',
+        mirror: true,
+      })
+    }
+    initAOS()
+  }, [])
 
   const courses = [
     {
@@ -73,7 +87,7 @@ export default function CoursesSection() {
       <div className={styles.blur2}></div>
 
       <div className={styles.container}>
-        <div className={styles.titleWrapper}>
+        <div className={styles.titleWrapper} data-aos="fade-down">
           <h2 className={styles.title}>What Our Courses Offer You</h2>
         </div>
 
@@ -83,6 +97,8 @@ export default function CoursesSection() {
               key={index}
               className={styles.card}
               onClick={() => handleCardClick(index)}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               style={{
                 ...getCardStyle(index),
                 '--dot-color': course.color,
@@ -92,9 +108,11 @@ export default function CoursesSection() {
               <div
                 className={styles.decorativeCorner}
                 style={{ background: `linear-gradient(to bottom left, ${course.color}, transparent)` }}
+                data-aos="fade"
+                data-aos-delay={index * 150 + 200}
               ></div>
 
-              <header className={styles.cardHeader}>
+              <header className={styles.cardHeader} data-aos="fade-right" data-aos-delay={index * 150 + 300}>
                 <h2>{course.title}</h2>
                 <label
                   onClick={(e) => {
@@ -109,7 +127,11 @@ export default function CoursesSection() {
               <div className={styles.cardContent}>
                 <ul className={styles.itemsList}>
                   {course.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>
+                    <li 
+                      key={itemIndex}
+                      data-aos="fade-left"
+                      data-aos-delay={index * 150 + 400 + (itemIndex * 60)}
+                    >
                       <div className={styles.iconWrapper}>
                         <div className={styles.iconCircle}>
                           <ChevronRight className={styles.icon} />
